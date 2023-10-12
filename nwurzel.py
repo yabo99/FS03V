@@ -1,5 +1,6 @@
 def nteWurzel(a, n):
-    
+    a=float(a)
+    n=float(n)
     return (round(a**(1/n), 2))
 
 

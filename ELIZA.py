@@ -1,9 +1,12 @@
 #ELIZA Chatbot
 import wetter
 import random
+import nwurzel
 import wurzel
 
+
 word = []
+numbers = []
 randomanswer = ["Das ist ja interessant!", "Kannst du mir mehr davon erzählen", "Was möchtest du sonst noch wissen?", "Das finde ich cool"]
 
 
@@ -11,7 +14,9 @@ answer = {}
 answer['hallo'] = "Hallo. Mein Name ist Eliza"
 answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
+answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Wunderbar"
+
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
@@ -32,20 +37,34 @@ def weather(word):
     
     ergebnis1 = f'Bitte gebe eine Stadt ein'
     return ergebnis1
+
+def nwurzeln(word):
+    global numbers
+    for x in word:
+        if x.isdigit():
+            numbers.append(x)
+
+    erg = nwurzel.nteWurzel(numbers[1], numbers[0])
+    return erg
             
 def search(word):
     answerright = False
     for i in word:
-        #print(key)
+        #print(i)
         if i in answer:
             answerright= True
             if i == "wetter":
                 return weather(word)
+
+            if i == "n-wurzel":
+                return nwurzeln(word)
+
             if i == "wurzel":
                 for x in word:
                     if x.isdigit():
                         x = float(x)
                         return wurzelziehen(x)
+
         
             return answer[i]
             

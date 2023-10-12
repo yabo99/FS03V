@@ -67,6 +67,7 @@ def search(word):
                         return wurzelziehen(x)
             if i == "pi":
                 return picalculator.picalc()
+            #test
         
             return answer[i]
             

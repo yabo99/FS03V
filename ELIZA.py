@@ -3,7 +3,7 @@ import wetter
 import random
 import nwurzel
 import wurzel
-
+import picalculator
 
 word = []
 numbers = []
@@ -65,7 +65,8 @@ def search(word):
                     if x.isdigit():
                         x = float(x)
                         return wurzelziehen(x)
-
+            if i == "pi":
+                return picalculator.picalc()
         
             return answer[i]
             

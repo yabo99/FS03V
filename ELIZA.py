@@ -11,7 +11,7 @@ answer['hallo'] = "Hallo. Mein Name ist Eliza"
 answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 
-randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg"]
+randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
 user = " "
 key = " "

@@ -3,13 +3,13 @@ import wetter
 import random
 import nwurzel
 import wurzel
-
+import picalculator
 
 word = []
 numbers = []
 randomanswer = ["Das ist ja interessant!", "Kannst du mir mehr davon erzählen", "Was möchtest du sonst noch wissen?", "Das finde ich cool"]
 
-
+#Einträge im Dictionary
 answer = {}
 answer['hallo'] = "Hallo. Mein Name ist Eliza"
 answer['wetter'] = "1a Wetterüberprüfung"
@@ -28,7 +28,7 @@ def wurzelziehen(zahl1): #Funktion zur Wurzelberechnung
     x = ("Die Wurzel ist " + str(erg) + "!")
     return x
 
-def weather(word):
+def weather(word): 
     for i in word:
         if i in randomstadt:
             wetterstadt = wetter.stadtchat()
@@ -38,14 +38,15 @@ def weather(word):
     ergebnis1 = f'Bitte gebe eine Stadt ein'
     return ergebnis1
 
-def nwurzeln(word):
+def nwurzeln(word): #Aufruf der nWurzel Funktion, n muss bei der Benutzereingabe immer als erstes angegeben werden
     global numbers
     for x in word:
-        if x.isdigit():
+        if x.isdigit(): #liest die Zahlen aus der Benutzereingabe und schreibt sie in eine extra Liste
             numbers.append(x)
 
-    erg = nwurzel.nteWurzel(numbers[1], numbers[0])
-    return erg
+    erg = nwurzel.nteWurzel(numbers[1], numbers[0]) #übergibt an Programm die beiden Werte
+    erg2 = ("Das Ergebis lautet: " + str(erg))
+    return erg2
             
 def search(word):
     answerright = False
@@ -56,17 +57,18 @@ def search(word):
             if i == "wetter":
                 return weather(word)
 
-            if i == "n-wurzel":
+            if i == "n-wurzel": #suche nach -Wurzel in Dictionary
                 return nwurzeln(word)
 
-            if i == "wurzel": #Bei Eingabe von WURZEL
-                for x in word: #Durchsuchen der Anfrage nach Zahlen
-                    if x.isdigit(): #Wenn Zahl vorhanden dann Zahl = x
-                        x = float(x) #String-Zahl zu Float-Zahl
-                        return wurzelziehen(x) #Aufruf der Funktion mit Zahl
-
-
-        
+            if i == "wurzel":
+                for x in word:
+                    if x.isdigit():
+                        x = float(x)
+                        return wurzelziehen(x)
+                    
+            if i == "pi":#Sonderfall Pi
+                return picalculator.picalc()
+                  
             return answer[i]
             
     

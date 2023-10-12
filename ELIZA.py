@@ -11,7 +11,7 @@ answer['hallo'] = "Hallo. Mein Name ist Eliza"
 answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 
-randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg"]
+randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
 user = " "
 key = " "
@@ -21,6 +21,9 @@ def weather(word):
             wetterstadt = wetter.stadtchat()
             ergebnis= f'Das Wetter in  {(i)} ist  {wetterstadt[0]} und die Temperatur beträgt {wetterstadt[1]} Grad'
             return ergebnis
+    
+    ergebnis1 = f'Bitte gebe eine Stadt ein'
+    return ergebnis1
             
 def search(word):
     answerright = False

@@ -21,6 +21,9 @@ def weather(word):
             wetterstadt = wetter.stadtchat()
             ergebnis= f'Das Wetter in  {(i)} ist  {wetterstadt[0]} und die Temperatur beträgt {wetterstadt[1]} Grad'
             return ergebnis
+    
+    ergebnis1 = f'Bitte gebe eine Stadt ein'
+    return ergebnis1
             
 def search(word):
     answerright = False

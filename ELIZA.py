@@ -65,9 +65,9 @@ def search(word):
                     if x.isdigit():
                         x = float(x)
                         return wurzelziehen(x)
-            if i == "pi":
+            if i == "pi":#Sonderfall Pi
                 return picalculator.picalc()
-            #test
+            
         
             return answer[i]
             

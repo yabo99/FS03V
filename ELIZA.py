@@ -2,6 +2,8 @@
 import wetter
 import random
 import nwurzel
+import wurzel
+
 
 word = []
 numbers = []
@@ -13,11 +15,19 @@ answer['hallo'] = "Hallo. Mein Name ist Eliza"
 answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
+answer['wurzel'] = "Wunderbar"
+
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
 user = " "
 key = " "
+
+def wurzelziehen(zahl1):
+    erg = wurzel.wurzel(zahl1)
+    x = ("Die Wurzel ist " + str(erg) + "!")
+    return x
+
 def weather(word):
     for i in word:
         if i in randomstadt:
@@ -45,8 +55,16 @@ def search(word):
             answerright= True
             if i == "wetter":
                 return weather(word)
+
             if i == "n-wurzel":
                 return nwurzeln(word)
+
+            if i == "wurzel":
+                for x in word:
+                    if x.isdigit():
+                        x = float(x)
+                        return wurzelziehen(x)
+
         
             return answer[i]
             

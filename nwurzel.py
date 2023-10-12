@@ -1,7 +1,7 @@
 def nteWurzel(a, n):
-    a=float(a)
+    a=float(a) #Umwandeln
     n=float(n)
-    return (round(a**(1/n), 2))
+    return (round(a**(1/n), 2)) #Berechnung der n-ten Wurzel von einer Zahl
 
 
 

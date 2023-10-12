@@ -15,7 +15,7 @@ answer['hallo'] = "Hallo. Mein Name ist Eliza"
 answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
-answer['wurzel'] = "Wunderbar"
+answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
 
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
@@ -23,8 +23,8 @@ randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stu
 user = " "
 key = " "
 
-def wurzelziehen(zahl1):
-    erg = wurzel.wurzel(zahl1)
+def wurzelziehen(zahl1): #Funktion zur Wurzelberechnung
+    erg = wurzel.wurzel(zahl1) #Aufruf der importierten Funktion mit dem Parameter
     x = ("Die Wurzel ist " + str(erg) + "!")
     return x
 
@@ -59,11 +59,12 @@ def search(word):
             if i == "n-wurzel":
                 return nwurzeln(word)
 
-            if i == "wurzel":
-                for x in word:
-                    if x.isdigit():
-                        x = float(x)
-                        return wurzelziehen(x)
+            if i == "wurzel": #Bei Eingabe von WURZEL
+                for x in word: #Durchsuchen der Anfrage nach Zahlen
+                    if x.isdigit(): #Wenn Zahl vorhanden dann Zahl = x
+                        x = float(x) #String-Zahl zu Float-Zahl
+                        return wurzelziehen(x) #Aufruf der Funktion mit Zahl
+
 
         
             return answer[i]

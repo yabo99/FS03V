@@ -8,8 +8,8 @@ import muenzwurf
 import bild
 import bild_sascha
 import my_turtle_bohn
+import tim_turtle
 import turtle_jb
-
 
 word = []
 numbers = []
@@ -73,9 +73,17 @@ def zeichnen(word):
 
         elif y == 'bohn':
             my_turtle_bohn.zeichne_bohn()
-        
+
+        elif y == 'tim':
+            tim_turtle.zeichnung()
+
         elif y == 'janeck':
             turtle_jb.draw_janeck()
+
+def protokoll(file):
+    data = open(f'{file}', 'r')
+    print(data.read())
+
             
             
 def search(word):
@@ -144,5 +152,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-

@@ -85,7 +85,7 @@ def search(word):
             if i == "pi":#Sonderfall Pi
                 return picalculator.picalc()
             
-            if i == "zeichnen":
+            if i == "zeichnung":
                 return zeichnen(word)
                   
             return answer[i]

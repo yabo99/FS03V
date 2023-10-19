@@ -55,12 +55,10 @@ def zeichnen(word):
     for y in word:
         if y == 'yannick':
             bild.zeichnen_yannick()
-<<<<<<< HEAD
-            #Namen von Personen hinzufügen
-=======
+
         elif y == 'sascha':
             bild_sascha.zeichnung_sascha()
->>>>>>> c9cb134d73e08af7cc894cee5607afb7865c988c
+
             
             
 def search(word):

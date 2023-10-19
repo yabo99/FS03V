@@ -4,13 +4,11 @@ import random
 import nwurzel
 import wurzel
 import picalculator
-<<<<<<< HEAD
 import muenzwurf
-=======
 import bild
 import bild_sascha
 import my_turtle_bohn
->>>>>>> 95adfd879657fe1edd1d43a5c33f0b5e723d6601
+
 
 word = []
 numbers = []
@@ -23,13 +21,10 @@ answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
-<<<<<<< HEAD
 answer['muenze'] = "Ich werfe eine Münze"
-=======
 answer['zeichnung'] = "Zeichnung"
-answer['logfile'] = "LOGFILE"
 
->>>>>>> 95adfd879657fe1edd1d43a5c33f0b5e723d6601
+
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
@@ -71,13 +66,8 @@ def zeichnen(word):
 
         elif y == 'bohn':
             my_turtle_bohn.zeichne_bohn()
-
-def protokoll():
-    protokoll = open('test.txt', 'r')
-    print(protokoll.read())
             
             
-
 def search(word):
     answerright = False
     for i in word:
@@ -101,10 +91,6 @@ def search(word):
             
             if i == "zeichnung":
                 return zeichnen(word)
-            
-            if i == "logfile":
-                protokoll()
-
                   
             return answer[i]
             
@@ -114,7 +100,6 @@ def search(word):
     
 
 def main():
-
     print("Willkommen zum Eliza Chatbot\n")
     print("Sie können jederzeit die Anwendung mit dem Befehl bye beenden")
 
@@ -131,11 +116,6 @@ def main():
         #jedes Wort einzeln in Liste
         word = user_small.split(" ")
         print(search(word))
-    
-    x = input("Soll ein Protokoll erstellt werden? (y/n)")
-    if x == 'y':
-        print("In Bearbeitung...")
-        
 
     print("Ciao Kakao")
 

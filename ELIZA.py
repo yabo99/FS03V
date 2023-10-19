@@ -19,6 +19,7 @@ answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
 answer['zeichnung'] = "Zeichnung"
+answer['logfile'] = "LOGFILE"
 
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
@@ -59,8 +60,12 @@ def zeichnen(word):
         elif y == 'sascha':
             bild_sascha.zeichnung_sascha()
 
-            
-            
+
+def protokoll():
+    protokoll = open('test.txt', 'r')
+    print(protokoll.read())
+
+                   
 def search(word):
     answerright = False
     for i in word:
@@ -84,6 +89,10 @@ def search(word):
             
             if i == "zeichnen":
                 return zeichnen(word)
+            
+            if i == "logfile":
+                protokoll()
+
                   
             return answer[i]
             
@@ -93,6 +102,7 @@ def search(word):
     
 
 def main():
+
     print("Willkommen zum Eliza Chatbot\n")
     print("Sie können jederzeit die Anwendung mit dem Befehl bye beenden")
 
@@ -109,6 +119,11 @@ def main():
         #jedes Wort einzeln in Liste
         word = user_small.split(" ")
         print(search(word))
+    
+    x = input("Soll ein Protokoll erstellt werden? (y/n)")
+    if x == 'y':
+        print("In Bearbeitung...")
+        
 
     print("Ciao Kakao")
 

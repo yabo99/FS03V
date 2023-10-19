@@ -4,9 +4,11 @@ import random
 import nwurzel
 import wurzel
 import picalculator
+import muenzwurf
 import bild
 import bild_sascha
 import my_turtle_bohn
+import tim_turtle
 
 word = []
 numbers = []
@@ -19,8 +21,9 @@ answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
+answer['muenze'] = "Ich werfe eine Münze"
 answer['zeichnung'] = "Zeichnung"
-answer['logfile'] = "LOGFILE"
+
 
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
@@ -53,6 +56,11 @@ def nwurzeln(word): #Aufruf der nWurzel Funktion, n muss bei der Benutzereingabe
     erg2 = ("Das Ergebis lautet: " + str(erg))
     return erg2
 
+def muenzenwerfen():
+    
+    zufall =muenzwurf.muenzwurf1()
+    return zufall
+
 def zeichnen(word):
     for y in word:
         if y == 'yannick':
@@ -64,14 +72,17 @@ def zeichnen(word):
         elif y == 'bohn':
             my_turtle_bohn.zeichne_bohn()
 
+        elif y == 'tim':
+            tim_turtle.zeichnung()
+
 def protokoll(file):
     data = file
     return data
     #data = open(f'{file}', 'r')
     #print(data.read())
-            
-            
 
+            
+            
 def search(word):
     answerright = False
     for i in word:
@@ -96,11 +107,15 @@ def search(word):
             if i == "zeichnung":
                 return zeichnen(word)
             
+
             if i == "logfile":
                 x = word.index("logfile")
                 x = x + 1 
                 file = word[x]
                 return protokoll(file)
+            
+            if i == "muenze":
+                return muenzenwerfen()
 
                   
             return answer[i]
@@ -111,7 +126,6 @@ def search(word):
     
 
 def main():
-
     print("Willkommen zum Eliza Chatbot\n")
     print("Sie können jederzeit die Anwendung mit dem Befehl bye beenden")
 
@@ -128,11 +142,6 @@ def main():
         #jedes Wort einzeln in Liste
         word = user_small.split(" ")
         print(search(word))
-    
-    x = input("Soll ein Protokoll erstellt werden? (y/n)")
-    if x == 'y':
-        print("In Bearbeitung...")
-        
 
     print("Ciao Kakao")
 

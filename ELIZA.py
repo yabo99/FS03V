@@ -8,6 +8,7 @@ import muenzwurf
 import bild
 import bild_sascha
 import my_turtle_bohn
+import turtle_jb
 
 
 word = []
@@ -71,6 +72,9 @@ def zeichnen(word):
 
         elif y == 'bohn':
             my_turtle_bohn.zeichne_bohn()
+        
+        elif y == 'janeck':
+            turtle_jb.draw_janeck()
             
             
 def search(word):

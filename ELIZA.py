@@ -8,8 +8,12 @@ import muenzwurf
 import bild
 import bild_sascha
 import my_turtle_bohn
+<<<<<<< HEAD
 import turtle_jb
 
+=======
+import tim_turtle
+>>>>>>> d39a2fc8da14f818a726cdb7781eb098ddba9a97
 
 word = []
 numbers = []
@@ -24,6 +28,7 @@ answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
 answer['muenze'] = "Ich werfe eine Münze"
 answer['zeichnung'] = "Zeichnung"
+answer['logfile'] = "Logfileprogramm"
 
 
 
@@ -72,9 +77,20 @@ def zeichnen(word):
 
         elif y == 'bohn':
             my_turtle_bohn.zeichne_bohn()
+<<<<<<< HEAD
         
         elif y == 'janeck':
             turtle_jb.draw_janeck()
+=======
+
+        elif y == 'tim':
+            tim_turtle.zeichnung()
+
+def protokoll(file):
+    data = open(f'{file}', 'r')
+    print(data.read())
+
+>>>>>>> d39a2fc8da14f818a726cdb7781eb098ddba9a97
             
             
 def search(word):
@@ -101,8 +117,17 @@ def search(word):
             if i == "zeichnung":
                 return zeichnen(word)
             
+
+            if i == "logfile":
+                x = word.index("logfile")
+                x = x + 1 
+                file = word[x]
+                return protokoll(file)
+                
+            
             if i == "muenze":
                 return muenzenwerfen()
+
                   
             return answer[i]
             

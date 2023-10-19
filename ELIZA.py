@@ -6,6 +6,7 @@ import wurzel
 import picalculator
 import bild
 import bild_sascha
+import my_turtle_bohn
 
 word = []
 numbers = []
@@ -60,12 +61,15 @@ def zeichnen(word):
         elif y == 'sascha':
             bild_sascha.zeichnung_sascha()
 
+        elif y == 'bohn':
+            my_turtle_bohn.zeichne_bohn()
 
 def protokoll():
     protokoll = open('test.txt', 'r')
     print(protokoll.read())
+            
+            
 
-                   
 def search(word):
     answerright = False
     for i in word:
@@ -87,7 +91,7 @@ def search(word):
             if i == "pi":#Sonderfall Pi
                 return picalculator.picalc()
             
-            if i == "zeichnen":
+            if i == "zeichnung":
                 return zeichnen(word)
             
             if i == "logfile":

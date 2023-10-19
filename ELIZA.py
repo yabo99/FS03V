@@ -4,12 +4,9 @@ import random
 import nwurzel
 import wurzel
 import picalculator
-<<<<<<< HEAD
-import muenzwurf
-=======
 import bild
 import bild_sascha
->>>>>>> 7bc3b6d21ffae13af0c3f4df578b53b75ac59dba
+import my_turtle_bohn
 
 word = []
 numbers = []
@@ -22,18 +19,13 @@ answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
-<<<<<<< HEAD
-answer['muenze'] = "Ich werfe eine Münze"
-=======
 answer['zeichnung'] = "Zeichnung"
 
->>>>>>> 7bc3b6d21ffae13af0c3f4df578b53b75ac59dba
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
 user = " "
 key = " "
-
 
 def wurzelziehen(zahl1): #Funktion zur Wurzelberechnung
     erg = wurzel.wurzel(zahl1) #Aufruf der importierten Funktion mit dem Parameter
@@ -68,6 +60,8 @@ def zeichnen(word):
         elif y == 'sascha':
             bild_sascha.zeichnung_sascha()
 
+        elif y == 'bohn':
+            my_turtle_bohn.zeichne_bohn()
             
             
 def search(word):
@@ -94,10 +88,6 @@ def search(word):
             if i == "zeichnen":
                 return zeichnen(word)
                   
-            if i == "muenze":
-                return muenzwurf.muenzwurf()
-                
-            
             return answer[i]
             
     

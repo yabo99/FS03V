@@ -1,6 +1,6 @@
 import turtle
 
-def zeichne_muster():
+def zeichne_bohn():
     turtle.write("Bohn", font=('Arial', 50, 'normal'))
 
     window = turtle.Screen()
@@ -17,4 +17,4 @@ def zeichne_muster():
     window.exitonclick()
 
 if __name__ == "__main__":
-    zeichne_muster()
+    zeichne_bohn()

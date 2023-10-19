@@ -4,6 +4,7 @@ import random
 import nwurzel
 import wurzel
 import picalculator
+import muenzwurf
 
 word = []
 numbers = []
@@ -16,12 +17,13 @@ answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
-
+answer['muenze'] = "Ich werfe eine Münze"
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
 user = " "
 key = " "
+
 
 def wurzelziehen(zahl1): #Funktion zur Wurzelberechnung
     erg = wurzel.wurzel(zahl1) #Aufruf der importierten Funktion mit dem Parameter
@@ -69,6 +71,10 @@ def search(word):
             if i == "pi":#Sonderfall Pi
                 return picalculator.picalc()
                   
+            if i == "muenze":
+                return muenzwurf.muenzwurf()
+                
+            
             return answer[i]
             
     

@@ -56,6 +56,11 @@ def nwurzeln(word): #Aufruf der nWurzel Funktion, n muss bei der Benutzereingabe
     erg2 = ("Das Ergebis lautet: " + str(erg))
     return erg2
 
+def muenzenwerfen():
+    
+    zufall =muenzwurf.muenzwurf1()
+    return zufall
+
 def zeichnen(word):
     for y in word:
         if y == 'yannick':
@@ -91,6 +96,9 @@ def search(word):
             
             if i == "zeichnung":
                 return zeichnen(word)
+            
+            if i == "muenze":
+                return muenzenwerfen()
                   
             return answer[i]
             

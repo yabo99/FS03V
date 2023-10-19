@@ -5,6 +5,7 @@ import nwurzel
 import wurzel
 import picalculator
 import bild
+import bild_sascha
 
 word = []
 numbers = []
@@ -17,7 +18,7 @@ answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
-answer['zeichnen'] = "Zeichnung"
+answer['zeichnung'] = "Zeichnung"
 
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
@@ -54,6 +55,8 @@ def zeichnen(word):
     for y in word:
         if y == 'yannick':
             bild.zeichnen_yannick()
+        elif y == 'sascha':
+            bild_sascha.zeichnung_sascha()
             
             
 def search(word):

@@ -64,9 +64,11 @@ def zeichnen(word):
         elif y == 'bohn':
             my_turtle_bohn.zeichne_bohn()
 
-def protokoll():
-    protokoll = open('test.txt', 'r')
-    print(protokoll.read())
+def protokoll(file):
+    data = file
+    return data
+    #data = open(f'{file}', 'r')
+    #print(data.read())
             
             
 
@@ -95,7 +97,10 @@ def search(word):
                 return zeichnen(word)
             
             if i == "logfile":
-                protokoll()
+                x = word.index("logfile")
+                x = x + 1 
+                file = word[x]
+                return protokoll(file)
 
                   
             return answer[i]

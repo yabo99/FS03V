@@ -4,7 +4,12 @@ import random
 import nwurzel
 import wurzel
 import picalculator
+<<<<<<< HEAD
 import muenzwurf
+=======
+import bild
+import bild_sascha
+>>>>>>> 7bc3b6d21ffae13af0c3f4df578b53b75ac59dba
 
 word = []
 numbers = []
@@ -17,7 +22,12 @@ answer['wetter'] = "1a Wetterüberprüfung"
 answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
+<<<<<<< HEAD
 answer['muenze'] = "Ich werfe eine Münze"
+=======
+answer['zeichnung'] = "Zeichnung"
+
+>>>>>>> 7bc3b6d21ffae13af0c3f4df578b53b75ac59dba
 
 randomstadt = ["karlstein", "darmstadt", "wallerstädten", "aschaffenburg", "stuttgart"]
 
@@ -49,6 +59,16 @@ def nwurzeln(word): #Aufruf der nWurzel Funktion, n muss bei der Benutzereingabe
     erg = nwurzel.nteWurzel(numbers[1], numbers[0]) #übergibt an Programm die beiden Werte
     erg2 = ("Das Ergebis lautet: " + str(erg))
     return erg2
+
+def zeichnen(word):
+    for y in word:
+        if y == 'yannick':
+            bild.zeichnen_yannick()
+
+        elif y == 'sascha':
+            bild_sascha.zeichnung_sascha()
+
+            
             
 def search(word):
     answerright = False
@@ -70,6 +90,9 @@ def search(word):
                     
             if i == "pi":#Sonderfall Pi
                 return picalculator.picalc()
+            
+            if i == "zeichnen":
+                return zeichnen(word)
                   
             if i == "muenze":
                 return muenzwurf.muenzwurf()

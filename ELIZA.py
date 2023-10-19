@@ -23,6 +23,7 @@ answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
 answer['muenze'] = "Ich werfe eine Münze"
 answer['zeichnung'] = "Zeichnung"
+answer['logfile'] = "Logfileprogramm"
 
 
 
@@ -76,10 +77,8 @@ def zeichnen(word):
             tim_turtle.zeichnung()
 
 def protokoll(file):
-    data = file
-    return data
-    #data = open(f'{file}', 'r')
-    #print(data.read())
+    data = open(f'{file}', 'r')
+    print(data.read())
 
             
             
@@ -113,6 +112,7 @@ def search(word):
                 x = x + 1 
                 file = word[x]
                 return protokoll(file)
+                
             
             if i == "muenze":
                 return muenzenwerfen()

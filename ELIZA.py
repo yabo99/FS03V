@@ -23,7 +23,7 @@ answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
 answer['muenze'] = "Ich werfe eine Münze"
-answer['zeichnung'] = "Zeichnung"
+answer['zeichnung'] = "Gebe Zeichnung aus"
 answer['logfile'] = "Logfileprogramm"
 
 
@@ -107,7 +107,7 @@ def search(word):
                 return picalculator.picalc()
             
             if i == "zeichnung":
-                return zeichnen(word)
+                zeichnen(word)
             
 
             if i == "logfile":

@@ -23,7 +23,7 @@ answer['hems'] = "Die HEMS ist eine schöne Schule"
 answer['n-wurzel'] = "Wurzelberechnung"
 answer['wurzel'] = "Bitte zur Wurzelberechnung eine Zahl eingeben!"
 answer['muenze'] = "Ich werfe eine Münze"
-answer['zeichnung'] = "Zeichnung"
+answer['zeichnung'] = "Gebe Zeichnung aus"
 answer['logfile'] = "Logfileprogramm"
 
 
@@ -89,14 +89,14 @@ def zeichnen(word):
         return "Zeichng nett gefunne"
 
 def protokoll(file):
-    data = open(f'{file}', 'r')
+    data = open(f"{file}", "r")
     print(data.read())
+
 
 def myPrint (text, datei):
     print(text)
     datei.write(text + "\n")
-
-                
+    
             
 def search(word):
     answerright = False
@@ -120,7 +120,7 @@ def search(word):
                 return picalculator.picalc()
             
             if i == "zeichnung":
-                return zeichnen(word)
+                zeichnen(word)
             
 
             if i == "logfile":

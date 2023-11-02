@@ -76,6 +76,10 @@ def zeichnen(word):
         
         elif y == 'janeck':
             turtle_jb.draw_janeck()
+
+def protokoll(file):
+    data = open(f"{file}", "r")
+    print(data.read())
             
             
 def search(word):

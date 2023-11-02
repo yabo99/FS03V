@@ -64,27 +64,39 @@ def muenzenwerfen():
     return zufall
 
 def zeichnen(word):
+    zeichnungAusgegeben = False
+
     for y in word:
         if y == 'yannick':
             bild.zeichnen_yannick()
-
+            zeichnungAusgegeben = True        
         elif y == 'sascha':
             bild_sascha.zeichnung_sascha()
-
+            zeichnungAusgegeben = True
         elif y == 'bohn':
             my_turtle_bohn.zeichne_bohn()
-
+            zeichnungAusgegeben = True
         elif y == 'tim':
             tim_turtle.zeichnung()
-
+            zeichnungAusgegeben = True
         elif y == 'janeck':
             turtle_jb.draw_janeck()
+            zeichnungAusgegeben = True
+
+    if (zeichnungAusgegeben):    
+        return "Zeichnung von  " + y
+    else:
+        return "Zeichng nett gefunne"
 
 def protokoll(file):
     data = open(f'{file}', 'r')
     print(data.read())
 
-            
+def myPrint (text, datei):
+    print(text)
+    datei.write(text + "\n")
+
+                
             
 def search(word):
     answerright = False
@@ -130,24 +142,33 @@ def search(word):
     
 
 def main():
-    print("Willkommen zum Eliza Chatbot\n")
-    print("Sie können jederzeit die Anwendung mit dem Befehl bye beenden")
 
+    datei = open("eliza_protokoll.txt", "w")
 
+    myPrint("ELIZA: Willkommen zum Eliza Chatbot\n", datei)
 
+    myPrint("ELIZA: Sie können jederzeit die Anwendung mit dem Befehl bye beenden", datei)
 
     global user
-    while user != "bye":
+    while True:
         #Benutzereingabe und alle Buchstaben klein
-        user = input("Ihre Eingabe:")
+        user = input("ELIZA: Ihre Eingabe:\n")
+        datei.write("USER: " + user +  "\n")
         user_small= user.lower()
 
+        if (user == "bye"):
+            break
 
         #jedes Wort einzeln in Liste
         word = user_small.split(" ")
-        print(search(word))
+        # sinnvolle Antwort ermitteln
+        programmAntwort = search(word)
 
-    print("Ciao Kakao")
+        myPrint("ELIZA: " + programmAntwort, datei)
+
+    myPrint("ELIZA: Ciao Kakao", datei)
+    
+    datei.close()
 
 
 if __name__=="__main__":

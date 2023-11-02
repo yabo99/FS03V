@@ -3,18 +3,17 @@ import turtle
 def zeichne_bohn():
     turtle.write("Bohn", font=('Arial', 50, 'normal'))
 
-    window = turtle.Screen()
-    window.bgcolor("green")
+   # turtle.Screen.bgcolor("green")
 
-    pen = turtle.Turtle()
-    pen.speed(3)
-    pen.color  ("blue")
+    #pen = turtle.Turtle()
+    turtle.speed(3)
+    turtle.color  ("blue")
 
-    for _ in range(40):
-        pen.forward(100)
-        pen.right(170)
+    for _ in range(10):
+        turtle.forward(100)
+        turtle.right(170)
 
-    window.exitonclick()
+    #window.exitonclick()
 
 if __name__ == "__main__":
     zeichne_bohn()
